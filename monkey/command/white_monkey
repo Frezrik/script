@@ -1,0 +1,2 @@
+rm -r /data/monkey.txt
+monkey --pkg-whitelist-file /data/whitelist.txt --ignore-crashes --ignore-timeouts --ignore-security-exceptions --ignore-native-crashes --throttle 100 -s 500 -v 1000000000 > /data/monkey.txt

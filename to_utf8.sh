@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for f in `find $1 -name "*.[ch]" -o -name "*.cpp"`
+for f in `find $1 -name "*.[ch]"`
 do
 	encode=`file $f`
 	if [[ $encode == *ISO-8859* ]]
@@ -8,7 +8,7 @@ do
 		echo "file = $f"
 		echo "encode = $encode"	
 		echo "mach ISO-8859, convert to utf-8."
-		iconv -f gb18030 -t UTF-8 $f  -o ${f}_utf8	
+		iconv -f GBK -t UTF-8 $f  -o ${f}_utf8	
 		rm $f
 		mv ${f}_utf8 $f
 	fi
